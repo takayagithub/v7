@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>タイプ相性 | Affinia</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="img/favicon.png" type="image/png">
+    <!-- OGP -->
+    <meta property="og:title" content="タイプ相性 | Affinia">
+    <meta property="og:description" content="16タイプすべての相性をチェック。気になるあの人との相性は？">
+    <meta property="og:type" content="article">
+</head>
+
+<body>
+    <header>
+        <a href="index.html" class="logo">
+            <img src="img/logo_icon.png" alt="Affinia Logo">
+            Affinia
+        </a>
+        <button id="menu-btn" class="menu-btn">
+            <span class="menu-line"></span>
+            <span class="menu-line"></span>
+            <span class="menu-line"></span>
+        </button>
+    </header>
+
+    <div id="menu-overlay" class="menu-overlay"></div>
+
+    <div id="side-menu" class="side-menu">
+        <nav>
+            <ul>
+                <li><a href="index.html">診断をはじめる</a></li>
+                <li><a href="about.html">Affiniaとは</a></li>
+                <li><a href="compatibility.html" class="active">タイプ相性</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <main id="compatibility-page" class="container fade-in">
+        <h1 class="text-center" style="margin-bottom: 2rem; color: var(--primary);">タイプ相性診断</h1>
+        <p class="text-center" style="margin-bottom: 2rem; color: var(--text-light);">
+            気になるあの人との相性は？<br>
+            仲良くなるためのヒントや、気をつけるべきポイントをチェックしましょう。
+        </p>
+
+        <div class="compat-tabs" style="display: flex; justify-content: center; gap: 1rem; margin-bottom: 2rem;">
+            <button id="tab-relation" class="tab-btn active">気になる人との相性</button>
+            <button id="tab-ideal" class="tab-btn">なりたい自分への道</button>
+        </div>
+
+        <div id="compat-selector" class="compat-selector">
+            <!-- Selectors injected by JS -->
+        </div>
+
+        <div id="compat-result" class="hidden">
+            <!-- Result injected by JS -->
+        </div>
+
+        <div class="text-center" style="margin-top: 3rem;">
+            <a href="about.html" class="btn-secondary">タイプ一覧に戻る</a>
+        </div>
+    </main>
+
+    <footer>
+        &copy; 2024 Affinia. All rights reserved.
+    </footer>
+
+    <script src="js/affinia-questions.js"></script>
+    <script src="js/affinia-types-basic.js"></script>
+    <script src="js/affinia-types-detail.js"></script>
+    <script src="js/affinia-compat-data.js"></script>
+    <script src="js/affinia-compat.js"></script>
+    <script src="js/affinia-compat-actions.js"></script>
+    <script src="js/affinia-core.js"></script>
+</body>
+
+</html>

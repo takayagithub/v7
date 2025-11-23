@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Affiniaとは | Affinia</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="img/favicon.png" type="image/png">
+    <!-- OGP -->
+    <meta property="og:title" content="Affiniaとは | Affinia">
+    <meta property="og:description" content="Affiniaの世界観と16種類のマスコットたちを紹介します。">
+    <meta property="og:type" content="article">
+</head>
+
+<body>
+    <header>
+        <a href="index.html" class="logo">
+            <img src="img/logo_icon.png" alt="Affinia Logo">
+            Affinia
+        </a>
+        <button id="menu-btn" class="menu-btn">
+            <span class="menu-line"></span>
+            <span class="menu-line"></span>
+            <span class="menu-line"></span>
+        </button>
+    </header>
+
+    <div id="menu-overlay" class="menu-overlay"></div>
+
+    <div id="side-menu" class="side-menu">
+        <nav>
+            <ul>
+                <li><a href="index.html">診断をはじめる</a></li>
+                <li><a href="about.html" class="active">Affiniaとは</a></li>
+                <li><a href="compatibility.html">タイプ相性</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <main id="about-page" class="container fade-in">
+        <!-- About Section -->
+        <section style="margin-bottom: 4rem; text-align: center;">
+            <h1 class="text-center" style="color: var(--primary); margin-bottom: 1.5rem;">Affiniaについて</h1>
+            <p style="max-width: 600px; margin: 0 auto; color: var(--text-main); text-align: left;">
+                Affinia（アフィニア）は、16種類の個性豊かなマスコットたちを通じて、<br>
+                あなたの本当の性格や、大切な人との相性を紐解くサービスです。<br><br>
+                自分を知ることは、幸せへの第一歩。<br>
+                そして相手を知ることは、より良い関係への架け橋となります。<br><br>
+                優しい世界観の中で、あなたらしい生き方を見つけてみませんか？
+            </p>
+            <div style="margin-top: 2rem; text-align: center;">
+                <a href="index.html" class="btn-primary">診断をはじめる</a>
+            </div>
+        </section>
+
+        <!-- Type List Section -->
+        <section>
+            <h2 class="text-center" style="color: var(--primary); margin-bottom: 2rem;">16タイプ一覧</h2>
+            <div id="types-grid" class="types-grid">
+                <!-- Grid items injected by JS -->
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        &copy; 2024 Affinia. All rights reserved.
+    </footer>
+
+    <script src="js/affinia-questions.js"></script>
+    <script src="js/affinia-types-basic.js"></script>
+    <script src="js/affinia-types-detail.js"></script>
+    <script src="js/affinia-compat.js"></script>
+    <script src="js/affinia-compat-actions.js"></script>
+    <script src="js/affinia-core.js"></script>
+</body>
+
+</html>

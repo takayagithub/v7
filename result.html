@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>診断結果 | Affinia</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="img/favicon.png" type="image/png">
+    <!-- OGP -->
+    <meta property="og:title" content="診断結果 | Affinia">
+    <meta property="og:description" content="私のAffiniaタイプ診断結果をチェック！あなたとの相性は？">
+    <meta property="og:type" content="article">
+</head>
+
+<body>
+    <header>
+        <a href="index.html" class="logo">
+            <img src="img/logo_icon.png" alt="Affinia Logo">
+            Affinia
+        </a>
+        <button id="menu-btn" class="menu-btn">
+            <span class="menu-line"></span>
+            <span class="menu-line"></span>
+            <span class="menu-line"></span>
+        </button>
+    </header>
+
+    <div id="menu-overlay" class="menu-overlay"></div>
+
+    <div id="side-menu" class="side-menu">
+        <nav>
+            <ul>
+                <li><a href="index.html">診断をはじめる</a></li>
+                <li><a href="about.html">Affiniaとは</a></li>
+                <li><a href="compatibility.html">タイプ相性</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <main id="result-page" class="container fade-in">
+        <div class="result-header">
+            <p style="color: var(--text-light); font-weight: bold;">あなたのAffiniaタイプ</p>
+            <img id="result-img" class="result-img floating" src="" alt="Result Image">
+            <h1 id="result-type-name" class="type-name"></h1>
+            <p id="result-catchphrase" class="catchphrase"></p>
+            <p id="result-desc" style="max-width: 600px; margin: 0 auto;"></p>
+        </div>
+
+        <div id="result-accordion" style="margin-bottom: 3rem;">
+            <!-- Accordion items will be injected here -->
+        </div>
+
+        <!-- CTA Section -->
+        <div class="text-center"
+            style="margin-bottom: 3rem; display: flex; flex-direction: column; gap: 1rem; align-items: center;">
+            <a href="compatibility.html" class="btn-primary btn-multiline">他タイプとの<br class="sp-only">相性を見る</a>
+            <a href="about.html" class="btn-secondary">他のタイプ一覧を見る</a>
+        </div>
+
+        <div class="share-section">
+            <div class="share-container">
+                <h3 class="share-title">診断結果をシェアする</h3>
+                <div class="share-buttons">
+                    <a href="https://twitter.com/intent/tweet?url=https://affinia.example.com&text=私のAffiniaタイプは..."
+                        target="_blank" class="share-btn-icon share-x" title="Xでシェア">X</a>
+                    <a href="https://social-plugins.line.me/lineit/share?url=https://affinia.example.com"
+                        target="_blank" class="share-btn-icon share-line" title="LINEでシェア">L</a>
+                    <a href="https://www.facebook.com/sharer/sharer.php?u=https://affinia.example.com" target="_blank"
+                        class="share-btn-icon share-fb" id="share-fb" title="Facebookでシェア">F</a>
+                    <button class="share-btn-icon share-insta" id="share-insta" title="Instagramでシェア">I</button>
+                    <button class="share-btn-icon share-qr" id="share-qr" title="QRコード">Q</button>
+                    <button class="share-btn-icon share-copy" id="share-copy" title="リンクをコピー">🔗</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        &copy; 2024 Affinia. All rights reserved.
+    </footer>
+
+    <script src="js/affinia-questions.js"></script>
+    <script src="js/affinia-types-basic.js"></script>
+    <script src="js/affinia-types-detail.js"></script>
+    <script src="js/affinia-compat-data.js"></script>
+    <script src="js/affinia-compat.js"></script>
+    <script src="js/affinia-compat-actions.js"></script>
+    <script src="js/affinia-core.js"></script>
+</body>
+
+</html>
