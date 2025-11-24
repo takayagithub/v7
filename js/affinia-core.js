@@ -60,6 +60,18 @@
             }
         },
 
+        createOptimizedImage: function (src, alt, className = '') {
+            const img = document.createElement('img');
+            img.src = src;
+            img.alt = alt;
+            if (className) img.className = className;
+            img.loading = 'lazy';
+            img.decoding = 'async';
+            img.classList.add('img-fade-in');
+            img.onload = () => img.classList.add('loaded');
+            return img;
+        },
+
         renderTopMarquee: function () {
             const container = document.getElementById('top-marquee');
             if (!container) return;
@@ -73,9 +85,7 @@
             const allImages = [...types, ...types];
 
             allImages.forEach(type => {
-                const img = document.createElement('img');
-                img.src = type.img;
-                img.alt = type.name;
+                const img = this.createOptimizedImage(type.img, type.name);
                 img.title = type.name;
                 content.appendChild(img);
             });
@@ -230,7 +240,11 @@
             // Update Header
             document.getElementById('result-type-name').textContent = basic.name;
             document.getElementById('result-catchphrase').textContent = basic.catchphrase;
-            document.getElementById('result-img').src = basic.img;
+            const resultImg = document.getElementById('result-img');
+            resultImg.src = basic.img;
+            resultImg.decoding = 'async';
+            resultImg.classList.add('img-fade-in');
+            resultImg.onload = () => resultImg.classList.add('loaded');
             document.getElementById('result-desc').textContent = basic.desc;
 
             // Render Accordion
@@ -388,7 +402,7 @@
                 card.className = 'type-card-mini';
                 card.innerHTML = `
                     <div class="card-img-wrapper">
-                        <img src="${type.img}" alt="${type.name}">
+                        <img src="${type.img}" alt="${type.name}" loading="lazy" decoding="async" class="img-fade-in" onload="this.classList.add('loaded')">
                     </div>
                     <h3>${type.name}</h3>
                     <p class="catchphrase">${type.catchphrase}</p>
@@ -434,7 +448,7 @@
             const body = modal.querySelector('#modal-body');
             body.innerHTML = `
                 <div class="modal-header">
-                    <img src="${basic.img}" class="modal-img">
+                    <img src="${basic.img}" class="modal-img img-fade-in" loading="lazy" decoding="async" onload="this.classList.add('loaded')">
                     <h2>${basic.name}</h2>
                     <p>${basic.catchphrase}</p>
                 </div>
@@ -535,12 +549,12 @@
                 <div class="compat-header ${result.class}">
                     <div class="compat-pair">
                         <div class="compat-char">
-                            <img src="${basicMe.img}">
+                            <img src="${basicMe.img}" loading="lazy" decoding="async" class="img-fade-in" onload="this.classList.add('loaded')">
                             <span>あなた</span>
                         </div>
                         <div class="compat-vs">×</div>
                         <div class="compat-char">
-                            <img src="${basicTarget.img}">
+                            <img src="${basicTarget.img}" loading="lazy" decoding="async" class="img-fade-in" onload="this.classList.add('loaded')">
                             <span>お相手</span>
                         </div>
                     </div>
@@ -628,12 +642,12 @@
                 <div class="compat-header compat-work"> <!-- Use 'work' style for growth -->
                     <div class="compat-pair">
                         <div class="compat-char">
-                            <img src="${basicMe.img}">
+                            <img src="${basicMe.img}" loading="lazy" decoding="async" class="img-fade-in" onload="this.classList.add('loaded')">
                             <span>現在</span>
                         </div>
                         <div class="compat-vs">➡</div>
                         <div class="compat-char">
-                            <img src="${basicTarget.img}">
+                            <img src="${basicTarget.img}" loading="lazy" decoding="async" class="img-fade-in" onload="this.classList.add('loaded')">
                             <span>目標</span>
                         </div>
                     </div>
